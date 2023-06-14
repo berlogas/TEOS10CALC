@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="htmltitle"></title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/table.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/toast.css" />
+    <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/lang.css" />
+    <link rel="stylesheet" href="css/toggle-switchy.css" />
+    <!-- <section> -->
+    <script id="lang" src="js/initialru.js"></script>
+    <script id="lang" src="js/initialen.js"></script>
+    <!-- </section> -->
+  </head>
+  <body>
+    <div id="myDiagram" class="cmodal" style="z-index: 20; display: none">
+      <!-- Modal content -->
+      <div class="cmodal-content">
+        <div class="cmodal-header">
+          <span id="myDiagram" class="close">&times;</span>
+          <span id="diagramtitle"></span>
+        </div>
+        <div class="cmodal-body">
+          <!-- <p>Some text in the Modal Body</p> -->
+          <div class="plotly" id="myDiv1"></div>
+        </div>
+        <!-- <div class="cmodal-footer">
+          Modal Footer
+        </div> -->
+      </div>
+    </div>
+
+    <div id="myModal" class="cmodal" style="display: none">
+      <div class="cmodal-content" style="width: fit-content">
+        <div class="cmodal-header">
+          <span id="myModal" class="close">&times;</span>
+          <span id="diagramtitlep"></span>
+        </div>
+        <div class="cmodal-body">
+          <span>
+            <!-- T-S diagram  -->
+            <input class="graphtitlets" id="tsdiagramtitle" type="text" />
+            <!-- <p class="inputd" id="tsdiagramtitlep"></p> -->
+          </span>
+          <div class="grid grid-prediagram">
+            <div>
+              <div>
+               
+                 
+                <input class="stitle" id="diagramstitle" type="text"  > 
+                <!-- <p class="inputd" id="diagramstitlep"></p> -->
+                
+                <select class="graphselect" id="sid" name="sname">
+                  <option>...</option>
+                </select>
+              </div>
+              <div>
+                <input class="ttitle" id="diagramttitle" type="text" />
+                <!-- <p class="inputd" id="diagramttitlep"></p> -->
+
+                <select class="graphselect" id="tid" name="tname">
+                  <option>...</option>
+                </select>
+              </div>
+              <div>
+                <input class="ptitle" id="diagramptitle" type="text" />
+                <!-- <p class="inputd" id="diagramptitlep"></p> -->
+
+                <select class="graphselect" id="pid" name="pname">
+                  <option>...</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <button id="ts" class="button butt" type="button">
+                <img width="18" src="images/enter.png" />
+              </button>
+            </div>
+          </div>
+
+          <span>
+            <!-- Level charts... -->
+            <input class="graphtitledd" id="dddiagramtitle" type="text" />
+          </span>
+          <div class="grid grid-prediagram">
+            <div>
+              <input class="dtitle" id="diagramdtitle" type="text" />
+              <!-- <p class="inputd" id="diagramdtitlep"></p> -->
+              <select class="graphselect" id="did" name="dname">
+                <option>...</option>
+              </select>
+              <div id="dddiv">
+                <div id="d1">
+                  <!-- value="x-axis1" -->
+                  <input class="x1title" id="diagramx1title" type="text" />
+                  <select class="graphselect" id="x1id" name="x1name">
+                    <option>...</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button id="dd" class="button butt" type="button">
+                <img width="18" src="images/enter.png" />
+              </button>
+            </div>
+          </div>
+          <span>
+            <!-- Custom chart... -->
+            <input class="graphtitlecc" id="ccdiagramtitle" type="text" />
+          </span>
+
+          <div class="grid grid-prediagram">
+            <div>
+              <div>
+                <!--  value="x-axis" -->
+                <input class="xtitle" id="diagramxtitle" type="text" />
+                <select class="graphselect" id="xid" name="xname">
+                  <option>...</option>
+                </select>
+              </div>
+              <!--  value="y-axis" -->
+              <div>
+                <input class="ytitle" id="diagramytitle" type="text" />
+                <select class="graphselect" id="yid" name="yname">
+                  <option>...</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <button id="cc" class="button butt" type="button">
+                <img width="18" src="images/enter.png" />
+              </button>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-body">
+      <div class="grid grid-lines">
+        <!-- <div class="one">
+          <div class="fixed-header">
+            <div class="container"><span id="htmlheader"></span></div>
+          </div>
+        </div> -->
+        <div class="two grid grid-menu">
+          <!-- 1  -->
+          <div><div class="edit-container form-inner">
+            <button
+              id="manualbutton"
+              class="button"
+              type="button"
+              onclick="openPDF()"
+              style="display: none"
+            >
+              <img width="18" src="images/manual.png" />
+            </button>
+          </div></div>
+          <!-- 2  -->
+          <div>
+            <div class="edit-container form-inner">
+              <button
+                id="graphbutton"
+                class="button"
+                type="button"
+                style="display: none"
+              >
+                <!-- <i class="fa fa-download"></i> -->
+                <img width="18" src="images/graph.png" />
+              </button>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div></div>
+          <!-- 4  -->
+          <div></div>
+          <!-- 5  -->
+          <div id="startfile" style="margin-top: 200px; z-index: 5">
+            <form>
+              <div>
+                <div class="loader fname2">
+                  <div class="text1" id="circletext1" style="display: none">
+                    <!-- <p>Thermodynamics and Equation of State of Seawater calculator * EOS-80 * TEOS-10 * </p> -->
+                    <p>
+                      <span id="htmlheader1"></span>
+                      <!-- Oceanography calculator · EOS-80 · TEOS-10 · -->
+                    </p>
+                  </div>
+                  <div class="decor form-inner" id="decor">
+                    <label
+                      class="button"
+                      for="csvFile"
+                      id="fname"
+                      style="display: none"
+                      ><span id="htmlfname"></span
+                    ></label>
+                    <input
+                      type="file"
+                      id="csvFile"
+                      name="myfile"
+                      accept=".csv, .txt"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- 6  -->
+          <div>
+            <div class="edit-container form-inner">
+              <button
+                id="downloadbutton"
+                class="button"
+                type="button"
+                onclick="saveFile()"
+                style="display: none"
+              >
+                <img width="18" src="images/downloadw.png" />
+              </button>
+            </div>
+          </div>
+          <!-- 7  -->
+          <div class="dropdown">
+            <div class="dropbtn" id="dropbtn">English</div>
+            <div class="dropdown-content">
+              <a href="#" id="ru" onclick="loadDemo('ru')" style="display: none"
+                >Русский</a
+              >
+              <a href="#" id="en" onclick="loadDemo('en')" style="display: none"
+                >English</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="three">
+          <form
+            class="decor2"
+            id="addPoints"
+            method="post"
+            enctype="multipart/form-data"
+            onsubmit="return false"
+            action=""
+          >
+            <div class="grid grid-main">
+              <div class="edit-container form-inner">
+                <div class="grid grid-header">
+                  <h5 style="text-align: center">
+                    <big id="htmlvarsheader"> </big>
+                  </h5>
+                </div>
+
+                <div class="grid-scroll-body">
+                  <div class="tab"></div>
+
+                  <div id="eos80" class="tabcontent">
+                    <span id="vars1" ></span>
+                  </div>
+
+                  <div id="saltemp" class="tabcontent">
+                    <span id="vars2"></span>
+                  </div>
+
+                  <div id="densent" class="tabcontent">
+                    <span id="vars3"></span>
+                  </div>
+                  <div id="termod" class="tabcontent">
+                    <span id="vars4"></span>
+                  </div>
+                </div>
+              </div>
+              <div id="nav" style="display: none; z-index: 7">
+                <nav class="menu-list tab">
+                  <!-- EOS80 -->
+                  <button
+                    class="tablinks"
+                    id="htmlvars1"
+                    onclick="openTab(event, 'eos80')"
+                  ></button>
+                  <!-- Соленость и температура -->
+                  <button
+                    class="tablinks"
+                    id="htmlvars2"
+                    onclick="openTab(event, 'saltemp')"
+                  ></button>
+                  <!-- Плотность и энергия -->
+                  <button
+                    class="tablinks"
+                    id="htmlvars3"
+                    onclick="openTab(event, 'densent')"
+                  ></button>
+                  <!-- Термодинамика -->
+                  <button
+                    class="tablinks"
+                    id="htmlvars4"
+                    onclick="openTab(event, 'termod')"
+                  ></button>
+                </nav>
+
+                <div class="loader" >
+                  <button
+                    id="enterbutton"
+                    class="button butt2"
+                    type="button"
+                    onclick="formCalc()"
+                    style="display: none; border-radius: 50%"
+                  >
+                    <img width="18" src="images/enter.png" />
+                  </button>
+                  <div class="text2" id="circletext2" style="display: none">
+                    <!-- <p>Thermodynamics and Equation of State of Seawater calculator * EOS-80 * TEOS-10 * </p> -->
+                    <p>
+                      <span id="htmlheader2"></span>
+                      <!-- Oceanography calculator · EOS-80 · TEOS-10 · -->
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="edit-container form-inner">
+                <div class="grid grid-header">
+                  <h5 style="text-align: center">
+                    <big id="htmldatasheader"></big>
+                  </h5>
+                </div>
+                <div class="grid-scroll-body">
+                  <span id="datas"></span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="four">
+          <div class="table-container" style="display: none">
+            <div style="display: flex">
+              <h5 id="htmltotallines">(показаны первые 12 записей)</h5>
+              <h5 id="limit"></h5>
+            </div>
+            <div class="d table-scroll" id="center1"></div>
+            <div class="d table-scroll-body" id="center2"></div>
+          </div>
+        </div>
+        <div class="five">
+          <div class="fixed-footer">
+            <span></span>
+            <div class="container">
+              &copy; 2022 Copyright <span id="htmlcopyright"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/EOS80.js"></script>
+    <script src="js/TEOS10_gsw_saar_data.js"></script>
+    <!-- Data Tables --->
+    <script src="js/TEOS10_gsw_oceanographic_toolbox.js"></script>
+    <!-- TEOS Toolbox --->
+    <script src="js/TEOS10_gsw_saar.js"></script>
+    <!-- GSW_saar --->
+    <!-- <script src="js/leader-line.min.js"></script> -->
+    <!-- <script src="js/jquery.modal.js"></script> -->
+    <script src="js/plotly-2.14.0.min.js"></script>
+    <script src="js/graph.js"></script>
+    <script src="js/initial.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+#tab0 {
+  width: 1px;
+}
+
+.resp-tab {
+  border-radius: 5px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+}
+.resp-tab th,
+.resp-tab td {
+  padding: 3px 7px;
+  font-size: 13px;
+  border: 1px solid var(--bgr1);
+  width: 1px;
+  text-align: center;
+}
+.resp-tab th,
+.hea {
+  color: var(--clr);
+  /* background: -moz-linear-gradient(top, #c9c9ff, #6767ff); */
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, var(--bgr)),
+    color-stop(1, var(--bgr2))
+  );
+
+  
+  font-weight: bold;
+  border: 1px solid var(--bgr);
+  /* text-transform: uppercase; */
+  vertical-align: bottom;
+  text-align: center;
+}
+.resp-tab tr:nth-child(even) {
+  background: var(--bgreven);
+}
+.resp-tab td span {
+  background: var(--bgr1);
+  color: var(--clr2);
+  display: none;
+  font-size: 11px;
+  font-weight: bold;
+  /*font-family: Verdana, sans-serif;*/
+  text-transform: uppercase;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 768px) {
+  .resp-tab thead {
+    display: none;
+  }
+  .resp-tab tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .resp-tab td {
+    margin: 0 -1px -1px 0;
+    padding-top: 35px;
+    position: relative;
+    width: 50%;
+  }
+  .resp-tab td span {
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  .resp-tab td {
+    width: 100%;
+  }
+}
+
+.table-scroll-body {
+  height: 28vh;
+  overflow-x: hidden;
+  margin-top: 0px;
+  margin-bottom: 1px;
+  border-bottom: 1px solid var(--bgr1);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.table-scroll-body2 {
+  overflow-x: auto;
+}
+
+.table-scroll table {
+  width: 100%;
+  table-layout: fixed;
+  border: none;
+}
+.table-container {
+  width: 100%;
+  padding: 0px 0 0 15px;
+  height: 100vh;
+}
+
+.table-container2 {
+  width: 100%;
+  padding: 0 0 0 20px;
+  margin-top: 10px; /* Отступ сверху */
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.d table {
+  display: flex;
+  flex-flow: column;
+  /*height: 100%;*/
+  width: 100%;
+}
+.d table thead {
+  flex: 0 0 auto;
+  width: calc(100% - 1.05em);
+}
+.d table tbody {
+  flex: 1 1 auto;
+  display: block;
+  overflow-y: auto;
+  /*overflow-y: scroll;
+    width: calc(100% - 1.05em);*/
+}
+.d table tbody tr {
+  width: 100%;
+}
+.d table thead,
+.d table tbody tr {
+  display: table;
+  table-layout: fixed;
+}
+
+.menu-list {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.tab {
+  display: block;
+  overflow: hidden;
+  color: var(--clr2)
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: var(--bgr1);
+  float: left;
+  border: 1px solid var(--clr1);
+  outline: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  transition: 0.3s;
+  font-weight: 600;
+  color: var(--clr2);
+  /* font-size: 17px; */
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  box-shadow: 2px 2px 2px #999;
+  /* letter-spacing: -0.5px; */
+  width: 95%;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: var(--bgreven);
+  color: var(--clr2)
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: var(--bgr);
+  color: var(--clr)
+}

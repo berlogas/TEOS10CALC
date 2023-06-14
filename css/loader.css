@@ -1,0 +1,64 @@
+.loader
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  font-family: consolas;
+}
+
+.loader button:hover {
+  background: var(--bgr);
+}
+
+
+.text2
+{
+  position: absolute;
+  width: 150x;
+  height: 150px;
+  border-radius:50%;
+  animation: animateText 60s linear infinite;
+}
+.text1
+{
+  position: absolute;
+  width: 150x;
+  height: 150px;
+  border-radius:50%;
+  animation: animateText 60s linear infinite;
+  margin-bottom: 2em;
+  padding-left: 114px;
+}
+
+@keyframes animateText
+{
+  0%
+  {
+    transform: rotate(360deg);
+  }
+  100%
+  {
+    transform: rotate(0deg);
+  }
+}
+.text2 b
+{
+  position: absolute;
+  left: 50%;
+  display: block;
+  transform-origin: 0 75px;
+  font-weight: bold;
+  font-size: 1em;
+
+}
+.text1 b 
+{
+  position: absolute;
+  left: 50%;
+  display: block;
+  transform-origin: 0 75px;
+  font-weight: bold;
+  font-size: 1em;
+
+}
